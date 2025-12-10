@@ -7,7 +7,7 @@ from __future__ import annotations
 import sys
 from typing import List
 
-from text import normalize, tokenize, count_freq, top_n  # type: ignore
+from src.lab03.text import normalize, tokenize, count_freq, top_n  # type: ignore
 
 
 def main(argv: List[str]) -> int:

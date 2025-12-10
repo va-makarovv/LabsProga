@@ -11,7 +11,7 @@ if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
 from src.lab04.io_txt_csv import read_text, write_csv
-from src.lab03.text import normalize, tokenize, count_freq, top_n
+from src.lab03 import normalize, tokenize, count_freq, top_n
 
 
 

@@ -12,7 +12,7 @@ import argparse
 from pathlib import Path
 from typing import List
 
-from src.lab03.text import normalize, tokenize, count_freq, top_n
+from src.lab03 import normalize, tokenize, count_freq, top_n
 
 
 def cmd_stats(args: argparse.Namespace) -> int:
@@ -123,7 +123,3 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     return args.func(args)
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
