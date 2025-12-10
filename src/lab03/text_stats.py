@@ -1,7 +1,7 @@
-
 """
 echo 'Привет, мир! Привет!!!' | python src/lab03/text_stats.py
 """
+
 from __future__ import annotations
 
 import sys

@@ -6,13 +6,13 @@ import unicodedata
 from collections import Counter
 from typing import Dict, List, Tuple
 
-wordRe = re.compile(r"\b\w+(?:-\w+)*\b", re.UNICODE) # \w и дефисы
+wordRe = re.compile(r"\b\w+(?:-\w+)*\b", re.UNICODE)  # \w и дефисы
 
-spaceRe = re.compile(r"\s+") #сливаем пробелы м в один
+spaceRe = re.compile(r"\s+")  # сливаем пробелы м в один
 
 
 def specials2Space(text: str) -> str:
-    'заменяем спецсимволы на пробел'
+    "заменяем спецсимволы на пробел"
     chars = []
     append = chars.append
     for ch in text:
@@ -43,15 +43,16 @@ def tokenize(text: str) -> List[str]:
 
 
 def count_freq(tokens: List[str]) -> Dict[str, int]:
-    'считаем частоты'
+    "считаем частоты"
     return dict(Counter(tokens))
 
 
 def top_n(freq: Dict[str, int], n: int = 5) -> List[Tuple[str, int]]:
-    'возвращаем по убыванию частоты или алфавиту'
+    "возвращаем по убыванию частоты или алфавиту"
     # Сортируем: сначала по -count, затем по слову
     items = sorted(freq.items(), key=lambda kv: (-kv[1], kv[0]))
     return items[:n]
+
 
 # #normalize
 # print(normalize("ПрИвЕт\nМИр\t"))

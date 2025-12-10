@@ -1,8 +1,8 @@
 """
 
-    python -m src.lab06.cli_convert json2csv --in data/samples/people.json --out data/out/people.csv
-    python -m src.lab06.cli_convert csv2json --in data/samples/people.csv --out data/out/people.json
-    python -m src.lab06.cli_convert csv2xlsx --in data/samples/people.csv --out data/out/people.xlsx
+python -m src.lab06.cli_convert json2csv --in data/samples/people.json --out data/out/people.csv
+python -m src.lab06.cli_convert csv2json --in data/samples/people.csv --out data/out/people.json
+python -m src.lab06.cli_convert csv2xlsx --in data/samples/people.csv --out data/out/people.xlsx
 """
 
 from __future__ import annotations
@@ -30,7 +30,6 @@ def ensure_output_dir(path_str: str) -> Path:
     except OSError as exc:
         raise SystemExit(f"Ошибка при создании директории '{path.parent}': {exc}")
     return path
-
 
 
 def cmd_json2csv(args: argparse.Namespace) -> int:
@@ -72,8 +71,6 @@ def cmd_csv2xlsx(args: argparse.Namespace) -> int:
     return 0
 
 
-
-
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="CLI-конвертеры данных (JSON/CSV/XLSX) для ЛР6 (на основе lab05)."
@@ -84,7 +81,6 @@ def build_parser() -> argparse.ArgumentParser:
         title="команды",
         help="доступные операции конвертации",
     )
-
 
     p_json2csv = subparsers.add_parser(
         "json2csv",
@@ -104,7 +100,6 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p_json2csv.set_defaults(func=cmd_json2csv)
 
-
     p_csv2json = subparsers.add_parser(
         "csv2json",
         help="конвертация CSV -> JSON",
@@ -122,7 +117,6 @@ def build_parser() -> argparse.ArgumentParser:
         help="путь к выходному JSON-файлу (.json)",
     )
     p_csv2json.set_defaults(func=cmd_csv2json)
-
 
     p_csv2xlsx = subparsers.add_parser(
         "csv2xlsx",

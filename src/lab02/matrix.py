@@ -28,7 +28,7 @@ def transpose(mat: list[list[Number]]) -> list[list[Number]]:
     if not mat:
         return []
     # zip(*mat) даёт кортежи, приводим к list[list]
-    return [list(col) for col in zip(*mat)] #подаются по строкам, собираются столбцы
+    return [list(col) for col in zip(*mat)]  # подаются по строкам, собираются столбцы
 
 
 def row_sums(mat: list[list[Number]]) -> list[Number]:
@@ -56,24 +56,25 @@ def col_sums(mat: list[list[Number]]) -> list[Number]:
             sums[j] += val
     return sums
 
-#transpose
+
+# transpose
 print(transpose([[1, 2, 3]]))
 print(transpose([[1], [2], [3]]))
 print(transpose([[1, 2], [3, 4]]))
 print(transpose([]))
-#print(transpose([[1, 2], [3]]))
+# print(transpose([[1, 2], [3]]))
 print()
 
-#row_sums
+# row_sums
 print(row_sums([[1, 2, 3], [4, 5, 6]]))
 print(row_sums([[-1, 1], [10, -10]]))
 print(row_sums([[0, 0], [0, 0]]))
-#print(row_sums([[1, 2], [3]]))
+# print(row_sums([[1, 2], [3]]))
 print()
 
-#col_sums
+# col_sums
 print(col_sums([[1, 2, 3], [4, 5, 6]]))
 print(col_sums([[-1, 1], [10, -10]]))
 print(col_sums([[0, 0], [0, 0]]))
-#print(col_sums([[1, 2], [3]]))
+# print(col_sums([[1, 2], [3]]))
 print()

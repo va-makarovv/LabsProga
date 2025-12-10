@@ -4,12 +4,17 @@ from pathlib import Path
 from tabnanny import check
 from typing import Iterable, Sequence
 
+
 def read_text(path: str | Path, encoding: str = "utf-8") -> str:
     p = Path(path)
     return p.read_text(encoding=encoding)
 
 
-def write_csv(rows: Iterable[Sequence], path: str | Path, header: tuple[str, ...] | None = None,) -> None:
+def write_csv(
+    rows: Iterable[Sequence],
+    path: str | Path,
+    header: tuple[str, ...] | None = None,
+) -> None:
 
     rows = list(rows)
 
@@ -31,8 +36,6 @@ def write_csv(rows: Iterable[Sequence], path: str | Path, header: tuple[str, ...
             w.writerow(header)
         for r in rows:
             w.writerow(r)
-
-
 
 
 txt = read_text("../../data/input1.txt")

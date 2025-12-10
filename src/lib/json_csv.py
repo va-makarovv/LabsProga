@@ -1,10 +1,8 @@
-
 from __future__ import annotations
 
 import csv
 import json
 from pathlib import Path
-
 
 
 def _check_suffix(path: Path, expected: str) -> None:
@@ -17,7 +15,6 @@ def _ensure_parent_dir(path: Path) -> None:
     parent = path.parent
     if parent and not parent.exists():
         parent.mkdir(parents=True, exist_ok=True)
-
 
 
 def json_to_csv(json_path: str, csv_path: str) -> None:
@@ -85,7 +82,11 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
         f.seek(0)
         reader = csv.DictReader(f, dialect=dialect)
 
-        if not has_header or not reader.fieldnames or any(h is None or h == "" for h in reader.fieldnames):
+        if (
+            not has_header
+            or not reader.fieldnames
+            or any(h is None or h == "" for h in reader.fieldnames)
+        ):
             raise ValueError("Пустой CSV или отсутствует заголовок")
         rows = []
         for row in reader:

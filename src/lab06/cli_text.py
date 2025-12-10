@@ -1,9 +1,9 @@
 """
 
-    python -m src.lab06.cli_text stats --input data/samples/text.txt
-    python -m src.lab06.cli_text stats --input data/samples/text.txt --top 10
-    python -m src.lab06.cli_text cat --input data/samples/text.txt
-    python -m src.lab06.cli_text cat --input data/samples/text.txt -n
+python -m src.lab06.cli_text stats --input data/samples/text.txt
+python -m src.lab06.cli_text stats --input data/samples/text.txt --top 10
+python -m src.lab06.cli_text cat --input data/samples/text.txt
+python -m src.lab06.cli_text cat --input data/samples/text.txt -n
 """
 
 from __future__ import annotations
@@ -61,8 +61,6 @@ def cmd_cat(args: argparse.Namespace) -> int:
         raise SystemExit(f"Ошибка при чтении файла '{input_path}': {exc}")
 
     return 0
-
-
 
 
 def build_parser() -> argparse.ArgumentParser:
