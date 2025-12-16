@@ -11,7 +11,7 @@ PathLike = Union[str, Path]
 
 
 def students_to_json(students: list[Student], path: PathLike) -> None:
-    """Сохраняет список студентов в JSON-файл."""
+    """список в JSON"""
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
 
@@ -23,7 +23,7 @@ def students_to_json(students: list[Student], path: PathLike) -> None:
 
 
 def students_from_json(path: PathLike) -> list[Student]:
-    """Читает JSON-массив и возвращает список Student (с валидацией)."""
+    """читает JSON и возвращает список"""
     p = Path(path)
     raw = json.loads(p.read_text(encoding="utf-8"))
 

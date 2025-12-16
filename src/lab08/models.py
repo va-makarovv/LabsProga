@@ -14,7 +14,7 @@ class Student:
     _birthdate_date: date = field(init=False, repr=False)
 
     def __post_init__(self) -> None:
-        # fio/group (не требовали явно, но полезно отлавливать мусор)
+        # fio/group
         if not isinstance(self.fio, str) or not self.fio.strip():
             raise ValueError("fio must be a non-empty string")
         if not isinstance(self.group, str) or not self.group.strip():
@@ -40,7 +40,6 @@ class Student:
             raise ValueError("birthdate cannot be in the future")
 
     def age(self) -> int:
-        """Количество полных лет."""
         today = date.today()
         b = self._birthdate_date
         years = today.year - b.year
@@ -49,7 +48,6 @@ class Student:
         return years
 
     def to_dict(self) -> dict:
-        """Сериализация в словарь (готовый для JSON)."""
         return {
             "fio": self.fio,
             "birthdate": self.birthdate,
@@ -59,7 +57,6 @@ class Student:
 
     @classmethod
     def from_dict(cls, d: dict) -> Student:
-        """Десериализация из словаря."""
         if not isinstance(d, dict):
             raise ValueError("student item must be a dict")
 

@@ -2,9 +2,10 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from .models import Student
-from .serialize import students_from_json, students_to_json
+from pathlib import Path
 
+from src.lab08.models import Student
+from src.lab08.serialize import students_from_json, students_to_json
 
 def main() -> None:
     print("=== Testing Examples for lab08 ===")
